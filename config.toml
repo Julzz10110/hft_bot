@@ -1,0 +1,34 @@
+[exchange]
+address = "127.0.0.1:8080"
+protocol = "text" #   text/binary/fix
+heartbeat_interval = 30
+max_retries = 5
+retry_delay_secs = 2
+
+[market_data]
+format = "json"
+aggregation_window = 20
+use_wma = false
+
+[order_execution]
+address = "127.0.0.1:8081"
+protocol = "binary"
+connection_timeout_secs = 5
+response_timeout_secs = 3
+
+[strategy]
+name = "SMA"
+long_period = 10
+short_period = 5
+window_size = 10
+
+[risk]
+max_position_size = 100
+max_loss_per_trade = 1000.0
+stop_loss_percentage = 0.01
+initial_capital = 10000.0
+
+[logging]
+console_level = "debug"
+file_level = "debug"
+file_path = "logs/hft_bot.log"

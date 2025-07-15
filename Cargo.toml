@@ -1,0 +1,26 @@
+[package]
+name = "hft_app"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+serde = { version = "1", features = ["derive"] }
+toml = "0.5"
+env_logger = "0.10"
+log = "0.4"
+serde_json = "1.0"
+rand = "0.8"
+quickfix = "0.1.6"
+byteorder = "1.5.0"
+ordered-float = "5.0.0"
+anyhow = "1.0.98"
+chrono = "0.4"
+tempfile = "3.3"  # only for testing
+
+[dev-dependencies]
+assert_matches = "1.5"  # added dependency for more convenient enum checks
+
+[features]
+default = ["json"] # enable json feature by default
+json = []
